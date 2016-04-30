@@ -316,12 +316,7 @@ do
 		filedir=$(dirname "$file")
 		filepath=$(winpath "$file")
 		
-		trimmed=$(echo "${filename%.*}" | sed -e 's/^[[:space:]0-9]*//;s/[[:space:]]*$//')
-		
-		if [ -z "$trimmed" ]
-		then
-			trimmed=$(echo "${filename%.*}")
-		fi
+		trimmed=$(echo "${filename%.*}")	
 		
 		image_url=$(echo "$trimmed" | sed 's/[^ a-zA-Z0-9]//g;s/ /-/g' | tr '[:upper:]' '[:lower:]')
 		
